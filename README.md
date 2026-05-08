@@ -37,6 +37,10 @@ nix run nixpkgs#ghq get myuron/dotfiles-wsl
 4. Build Environment
 
 ```bash
+cd ~/src/github.com/myuron/dotfiles-wsl
+```
+
+```bash
 home-manager switch --flake .
 ```
 
