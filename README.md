@@ -11,7 +11,7 @@ curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install
 ```
 
 ```bash
-nix --version
+nix run home-manager/master -- switch --flake .
 ```
 
 2. Git Setup
@@ -37,7 +37,7 @@ nix run nixpkgs#ghq get myuron/dotfiles-wsl
 4. Build Environment
 
 ```bash
-nix run .#home
+home-manager switch --flake .
 ```
 
 5. Shell Setup
