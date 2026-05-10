@@ -10,8 +10,12 @@
         ./plugin/treesitter.nix
         ./plugin/lsp.nix
         ./plugin/cmp.nix
+        # UI
         ./plugin/web-devicons.nix
+        ./plugin/bufferline.nix
+        # Search
         ./plugin/snacks.nix
+        # Edit
         ./plugin/mini-pairs.nix
         ./plugin/mini-surround.nix
       ];
