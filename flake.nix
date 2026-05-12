@@ -34,5 +34,14 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
+      apps.${system} = {
+        home = {
+          type = "app";
+          program = toString (pkgs.writeShellScript "home-manager build..." ''
+            set -e
+            home-manager switch --flake .
+          '');
+        };
+      };
     };
 }
