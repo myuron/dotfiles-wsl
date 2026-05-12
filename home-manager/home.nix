@@ -18,6 +18,7 @@
   imports = [
     ./nixvim/nixvim.nix
     ./fish.nix
+    ./direnv.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -28,6 +29,9 @@
     # pkgs.hello
     pkgs.lazygit
     pkgs.gh
+    pkgs.ghq
+    pkgs.jq
+    pkgs.delve
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
