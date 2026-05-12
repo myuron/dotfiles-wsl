@@ -18,6 +18,10 @@
         # Edit
         ./plugin/mini-pairs.nix
         ./plugin/mini-surround.nix
+        # dap
+        ./plugin/dap.nix
+        ./plugin/dap-ui.nix
+        ./plugin/dap-go.nix
       ];
     };
   };
