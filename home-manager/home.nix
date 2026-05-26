@@ -19,19 +19,28 @@
     ./nixvim/nixvim.nix
     ./fish.nix
     ./direnv.nix
+    ./television.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.lazygit
-    pkgs.gh
-    pkgs.ghq
-    pkgs.jq
-    pkgs.delve
+    lazygit
+    lazydocker
+    git
+    gh
+    ghq
+    jq
+    ripgrep
+    delve
+    terraform
+    claude-code
+    tldr
+    nix-search-tv
+    fd
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -84,4 +93,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 }
