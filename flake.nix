@@ -21,6 +21,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      nixosConfigurations."myuron" = nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [
+          ./nixos/configuration.nix
+        ];
+      };
       homeConfigurations."myuron" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
