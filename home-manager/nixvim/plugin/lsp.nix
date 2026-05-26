@@ -4,6 +4,8 @@
     servers = {
       nixd = { enable = true; };
       gopls = { enable = true; };
+      yaml-language-server = { enable = true; };
+      terraform_lsp = { enable = true; };
     };
   };
   keymaps = [
