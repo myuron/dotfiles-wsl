@@ -17,6 +17,7 @@
 
   imports = [
     ./nixvim/nixvim.nix
+    ./emacs/emacs.nix
     ./fish.nix
     ./direnv.nix
     ./television.nix
@@ -36,11 +37,20 @@
     jq
     ripgrep
     delve
-    terraform
-    claude-code
+    llm-agents.claude-code
     tldr
     nix-search-tv
     fd
+    vim-startuptime
+    viddy
+    fzf
+    eza
+    bat
+    # `emacs` is provided by the twist.nix wrapper (see ./emacs/emacs.nix).
+    zoxide
+
+    # Fonts for the GUI Emacs frame.
+    nerd-fonts.jetbrains-mono
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
