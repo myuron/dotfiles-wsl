@@ -18,6 +18,8 @@
         ./plugin/bufferline.nix
         ./plugin/lualine.nix
         ./plugin/noice.nix
+        ./plugin/dropbar.nix
+        ./plugin/notify.nix
         # Search
         ./plugin/snacks.nix
         # Edit

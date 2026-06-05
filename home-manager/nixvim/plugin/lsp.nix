@@ -4,6 +4,7 @@
     servers = {
       nixd = { enable = true; };
       gopls = { enable = true; };
+      jdtls = { enable = true; };
       yaml-language-server = { enable = true; };
       terraform_lsp = { enable = true; };
     };
@@ -18,6 +19,11 @@
       mode = "n";
       key = "gd";
       action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+    }
+    {
+      mode = "n";
+      key = "gr";
+      action = "<cmd>lua vim.lsp.buf.rename()<CR>";
     }
   ];
 }

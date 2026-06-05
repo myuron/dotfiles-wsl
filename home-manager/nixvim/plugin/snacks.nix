@@ -18,5 +18,15 @@
       key = "<leader>fg";
       action = "<cmd>lua Snacks.picker.grep()<CR>";
     }
+    {
+      mode = "n";
+      key = "<leader>gi";
+      action = "<cmd>lua Snacks.picker.gh_issue()<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gp";
+      action = "<cmd>lua Snacks.picker.gh_pr()<CR>";
+    }
   ];
 }
