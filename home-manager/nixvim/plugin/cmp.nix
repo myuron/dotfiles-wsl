@@ -6,6 +6,12 @@
         {
           name = "nvim_lsp";
         }
+        {
+          name = "path";
+        }
+        {
+          name = "buffer";
+        }
       ];
       mapping = {
         "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(),{'i','s'})";

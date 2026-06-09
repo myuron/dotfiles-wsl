@@ -30,6 +30,16 @@
     }
     {
       mode = "n";
+      key = "sq";
+      action = "<cmd>close<CR>";
+    }
+    {
+      mode = "t";
+      key = "<ESC>";
+      action = "<C-\\><C-n>";
+    }
+    {
+      mode = "n";
       key = "sh";
       action = "<C-w>h";
     }
@@ -48,8 +58,28 @@
       key = "sl";
       action = "<C-w>l";
     }
+    {
+      mode = "n";
+      key = "<C-s>h";
+      action = "<C-w><";
+    }
+    {
+      mode = "n";
+      key = "<C-s>j";
+      action = "<C-w>-";
+    }
+    {
+      mode = "n";
+      key = "<C-s>k";
+      action = "<C-w>+";
+    }
+    {
+      mode = "n";
+      key = "<C-s>l";
+      action = "<C-w>>";
+    }
     # --------------------------------------------------
-    # Buffer Management
+    # tab Management
     # --------------------------------------------------
     {
       mode = "n";
@@ -60,6 +90,21 @@
       mode = "n";
       key = "<S-Tab>";
       action = "<cmd>bprev<CR>";
+    }
+    {
+      mode = "n";
+      key = "t^";
+      action = "<cmd>bfirst<CR>";
+    }
+    {
+      mode = "n";
+      key = "t$";
+      action = "<cmd>blast<CR>";
+    }
+    {
+      mode = "n";
+      key = "tq";
+      action = "<cmd>bdelete<CR>";
     }
   ];
 }

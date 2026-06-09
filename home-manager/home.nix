@@ -17,10 +17,10 @@
 
   imports = [
     ./nixvim/nixvim.nix
-    ./emacs/emacs.nix
     ./fish.nix
     ./direnv.nix
     ./television.nix
+    ./symlink.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -37,7 +37,8 @@
     jq
     ripgrep
     delve
-    llm-agents.claude-code
+    gopls
+    # llm-agents.claude-code
     tldr
     nix-search-tv
     fd
@@ -46,8 +47,13 @@
     fzf
     eza
     bat
-    # `emacs` is provided by the twist.nix wrapper (see ./emacs/emacs.nix).
     zoxide
+    emacs
+    llm-agents.claude-code
+    kubectl
+    minikube
+    nix-output-monitor
+    tree-sitter
 
     # Fonts for the GUI Emacs frame.
     nerd-fonts.jetbrains-mono

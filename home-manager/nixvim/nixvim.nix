@@ -13,6 +13,9 @@
         ./plugin/cmp.nix
         ./plugin/lazygit.nix
         ./plugin/trouble.nix
+        ./plugin/toggleterm.nix
+        ./plugin/diffview.nix
+        ./plugin/indent-blankline.nix
         # UI
         ./plugin/web-devicons.nix
         ./plugin/bufferline.nix
