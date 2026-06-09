@@ -12,10 +12,11 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
-    { nixpkgs, home-manager, nixvim, ... }:
+    { nixpkgs, home-manager, nixvim, llm-agents, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -28,7 +29,12 @@
         ];
       };
       homeConfigurations."myuron" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            llm-agents.overlays.default
+          ];
+        };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
