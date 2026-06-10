@@ -27,9 +27,19 @@
   '';
   keymaps = [
     {
+      mode = "n";
+      key = "<leader>tt";
+      action = "<cmd>Pantran source=ja target=en<CR>";
+    }
+    {
       mode = "v";
       key = "<leader>tw";
       action = "<cmd>'<,'>Pantran<CR>";
+    }
+    {
+      mode = "v";
+      key = "<leader>tr";
+      action = "<cmd>'<,'>Pantran source=ja target=en mode=replace<CR>";
     }
   ];
 }
