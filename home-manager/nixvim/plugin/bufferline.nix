@@ -8,6 +8,10 @@
             filetype = "snacks_layout_box";
             text = "File Explorer";
           }
+          {
+            filetype = "trouble";
+            text = "Symbol";
+          }
         ];
         indicator = {
           style = "underline";
