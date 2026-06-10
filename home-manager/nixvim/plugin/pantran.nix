@@ -20,6 +20,9 @@
           },
         },
       },
+      window = {
+        window_config = { border = "rounded" },
+      },
     })
   '';
   keymaps = [
