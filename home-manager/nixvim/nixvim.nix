@@ -16,6 +16,7 @@
         ./plugin/toggleterm.nix
         ./plugin/diffview.nix
         ./plugin/indent-blankline.nix
+        ./plugin/pantran.nix
         # UI
         ./plugin/web-devicons.nix
         ./plugin/bufferline.nix
