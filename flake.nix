@@ -51,6 +51,9 @@
           type = "app";
           program = toString (pkgs.writeShellScript "home-manager build..." ''
             set -e
+            echo "==> run nvfetcher"
+            nvfetcher
+            echo "==> run home-manager"
             home-manager switch --flake .
           '');
         };

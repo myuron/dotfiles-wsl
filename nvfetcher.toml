@@ -1,0 +1,3 @@
+[pantran]
+src.git = "https://github.com/potamides/pantran.nvim"
+fetch.github = "potamides/pantran.nvim"

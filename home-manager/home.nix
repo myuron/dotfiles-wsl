@@ -54,6 +54,7 @@
     minikube
     nix-output-monitor
     tree-sitter
+    nvfetcher
 
     # Fonts for the GUI Emacs frame.
     nerd-fonts.jetbrains-mono
