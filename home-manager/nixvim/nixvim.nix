@@ -8,9 +8,9 @@
       imports = [
         ./option.nix
         ./keymap.nix
+        ./plugin/lz-n.nix
         ./plugin/treesitter.nix
         ./plugin/lsp.nix
-        ./plugin/cmp.nix
         ./plugin/lazygit.nix
         ./plugin/trouble.nix
         ./plugin/toggleterm.nix
@@ -29,10 +29,7 @@
         # Edit
         ./plugin/mini-pairs.nix
         ./plugin/mini-surround.nix
-        # dap
-        ./plugin/dap.nix
-        ./plugin/dap-ui.nix
-        ./plugin/dap-go.nix
+        ./plugin/cmp.nix
       ];
     };
   };
