@@ -54,5 +54,6 @@
       "flakes"
     ];
     allow-import-from-derivation = false;
+    sandbox = true;
   };
 }

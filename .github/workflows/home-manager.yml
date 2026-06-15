@@ -1,0 +1,14 @@
+name: home-manager
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/determinate-nix-action@main
+      - name: home-manager build
+        run: nix run nixpkgs#home-manager -- build --flake .#home

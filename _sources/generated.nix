@@ -6,6 +6,18 @@
   dockerTools,
 }:
 {
+  cmp-skkeleton = {
+    pname = "cmp-skkeleton";
+    version = "2c268a407e9e843abd03c6fa77485541a4ddcd9a";
+    src = fetchFromGitHub {
+      owner = "uga-rosa";
+      repo = "cmp-skkeleton";
+      rev = "2c268a407e9e843abd03c6fa77485541a4ddcd9a";
+      fetchSubmodules = false;
+      sha256 = "sha256-Odg0cmLML2L4YVcrMt7Lrie1BAl7aNEq6xqJN3/JhZs=";
+    };
+    date = "2023-11-26";
+  };
   pantran = {
     pname = "pantran";
     version = "b87c3ae48cba4659587fb75abd847e5b7a7c9ca0";
@@ -17,5 +29,17 @@
       sha256 = "sha256-b4odpXwh+BmFsK5v3HmSWG43FA+ygOAPU+qFNy6vWDU=";
     };
     date = "2025-04-07";
+  };
+  skkeleton = {
+    pname = "skkeleton";
+    version = "770b265dd115dba96ea5314642e35764654ef08f";
+    src = fetchFromGitHub {
+      owner = "vim-skk";
+      repo = "skkeleton";
+      rev = "770b265dd115dba96ea5314642e35764654ef08f";
+      fetchSubmodules = false;
+      sha256 = "sha256-Gsl/LqUY8szRqYLnDVyDOIDCw+cisoKsS5Fl1zQ+unM=";
+    };
+    date = "2026-05-05";
   };
 }

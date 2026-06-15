@@ -12,6 +12,9 @@
         {
           name = "buffer";
         }
+        {
+          name = "skkeleton";
+        }
       ];
       mapping = {
         "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(),{'i','s'})";

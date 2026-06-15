@@ -88,6 +88,11 @@
   (tab-bar-mode t)
   (face-spec-set 'tab-bar-tab '((((background light)) (:background "gold")) (((background dark)) (:background "#808080")))))
 
+(leaf evil
+  :ensure t
+  :config
+  (evil-mode t))
+
 ;; 自動再読み込み
 (global-auto-revert-mode t)
 

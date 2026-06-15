@@ -2,7 +2,6 @@
   luaLoader.enable = true;
   globals = {
     mapleader = " ";
-    # loaded_netrw = 1;
   };
   opts = {
     number = true;

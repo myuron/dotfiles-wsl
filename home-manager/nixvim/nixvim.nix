@@ -4,6 +4,7 @@
       enable = true;
       vimAlias = true;
       # colorschemes.catppuccin.enable = true;
+      # colorschemes.tokyonight.enable = true;
       colorschemes.everforest.enable = true;
       imports = [
         ./option.nix
@@ -17,19 +18,21 @@
         ./plugin/diffview.nix
         ./plugin/indent-blankline.nix
         ./plugin/pantran.nix
-        # UI
+        ./plugin/lspkind.nix
+        ./plugin/which-key.nix
         ./plugin/web-devicons.nix
         ./plugin/bufferline.nix
         ./plugin/lualine.nix
         ./plugin/noice.nix
         ./plugin/dropbar.nix
         ./plugin/notify.nix
-        # Search
         ./plugin/snacks.nix
-        # Edit
         ./plugin/mini-pairs.nix
         ./plugin/mini-surround.nix
         ./plugin/cmp.nix
+        ./plugin/denops.nix
+        ./plugin/skkeleton.nix
+        ./plugin/cmp-skkeleton.nix
       ];
     };
   };

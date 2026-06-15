@@ -1,3 +1,11 @@
 [pantran]
 src.git = "https://github.com/potamides/pantran.nvim"
 fetch.github = "potamides/pantran.nvim"
+
+[skkeleton]
+src.git = "https://github.com/vim-skk/skkeleton"
+fetch.github = "vim-skk/skkeleton"
+
+[cmp-skkeleton]
+src.git = "https://github.com/uga-rosa/cmp-skkeleton"
+fetch.github = "uga-rosa/cmp-skkeleton"

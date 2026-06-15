@@ -1,7 +1,10 @@
 {
   plugins.diffview = {
     enable = true;
-    lazyLoad.settings.cmd = "DiffviewOpen";
+    lazyLoad.settings.cmd = [
+      "DiffviewOpen"
+      "DiffviewFileHistory"
+    ];
   };
   keymaps = [
     {
@@ -11,8 +14,13 @@
     }
     {
       mode = "n";
-      key = "<leader>gD";
+      key = "<leader>gq";
       action = "<cmd>DiffviewClose<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>gh";
+      action = "<cmd>DiffviewFileHistory %<CR>";
     }
   ];
 }

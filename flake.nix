@@ -1,8 +1,5 @@
 {
-  description = "Home Manager configuration of myuron";
-
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,7 +7,6 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
@@ -22,39 +18,39 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations."myuron" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         system = system;
         modules = [
           ./nixos/configuration.nix
         ];
       };
-      homeConfigurations."myuron" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."home" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
             llm-agents.overlays.default
           ];
         };
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [
           ./home-manager/home.nix 
           nixvim.homeModules.nixvim
         ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
       apps.${system} = {
+        nixos = {
+          type = "app";
+          program = toString (pkgs.writeShellScript "home-manager build..." ''
+            set -e
+            echo "==> build nixos"
+            nixos-rebuild switch --flake .#nixos
+          '');
+        };
         home = {
           type = "app";
           program = toString (pkgs.writeShellScript "home-manager build..." ''
             set -e
-            echo "==> run nvfetcher"
-            nvfetcher
-            echo "==> run home-manager"
-            home-manager switch --flake .
+            echo "==> build home-manager"
+            nix run nixpkgs#home-manager -- switch --flake .#home
           '');
         };
       };
