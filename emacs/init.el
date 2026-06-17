@@ -1,3 +1,5 @@
+(global-set-key (kbd "C-x C-m") 'set-mark-command)
+
 (eval-and-compile
   (customize-set-variable
    'package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
