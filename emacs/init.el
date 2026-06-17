@@ -1,9 +1,13 @@
 (global-set-key (kbd "C-x C-m") 'set-mark-command)
+;; バックアップファイルを作らない
+(setq make-bakcup-files nil)
+(setq auto-save-default nil)
 
 (eval-and-compile
   (customize-set-variable
    'package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                       ("melpa" . "https://melpa.org/packages/")))
+                       ("melpa" . "https://melpa.org/packages/")
+		       ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
   (package-initialize)
   (use-package leaf :ensure t)
 
@@ -43,6 +47,17 @@
 (leaf magit
   :ensure t
   :bind (("C-c g" . magit-status)))
+
+;; キーバインドの補完表示
+(leaf which-key
+  :doc "Display available keybindings in popup"
+  :ensure t
+  :global-minor-mode t)
+
+;; ターミナル
+(leaf eat
+  :ensure t
+  :bind (("C-c t" . eat-project)))
 
 ;; org-roam
 (leaf org-roam
