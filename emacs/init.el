@@ -14,6 +14,20 @@
     :config
     (leaf-keywords-init)))
 
+;; skk
+(leaf nskk
+  :custom ((nskk-dict-system-dictionary-files quote
+					      ("/usr/share/skk/SKK-JISYO.L")))
+  :init
+  (use-package-vc-install
+   '(nskk
+     (:url "https://github.com/takeokunn/nskk.el" :lisp-dir "src")
+     nil)
+   nil)
+  :require t
+  :config
+  (nskk-global-mode 1))
+
 ;; leaf変換
 (leaf leaf-convert
   :doc "Convert many format to leaf format"
