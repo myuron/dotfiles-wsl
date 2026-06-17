@@ -14,6 +14,11 @@
     :config
     (leaf-keywords-init)))
 
+;; leaf変換
+(leaf leaf-convert
+  :doc "Convert many format to leaf format"
+  :ensure t)
+
 ;; 垂直補完UI
 (leaf vertico
   :doc "Vertical interactive completion"
