@@ -43,3 +43,15 @@
 (leaf magit
   :ensure t
   :bind (("C-c g" . magit-status)))
+
+;; org-roam
+(leaf org-roam
+  :ensure t
+  :custom
+  (org-roam-directory . "~/src/github.com/myuron/org-roam")
+  :config
+  (org-roam-db-autosync-mode)
+  :bind (("C-c r f" . org-roam-node-find)
+	 ("C-c r i" . org-roam-node-insert)
+	 ("C-c r t" . org-roam-buffer-toggle)
+	 ("C-c r a" . org-roam-alias-add)))
