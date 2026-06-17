@@ -13,3 +13,7 @@
     (leaf blackout :ensure t)
     :config
     (leaf-keywords-init)))
+
+(leaf magit
+  :ensure t
+  :bind (("C-c g" . magit-status)))
