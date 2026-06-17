@@ -14,6 +14,12 @@
     :config
     (leaf-keywords-init)))
 
+;; 垂直補完UI
+(leaf vertico
+  :doc "Vertical interactive completion"
+  :ensure t
+  :global-minor-mode t)
+
 (leaf magit
   :ensure t
   :bind (("C-c g" . magit-status)))
