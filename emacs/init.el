@@ -25,6 +25,7 @@
   :ensure t
   :global-minor-mode t)
 
+;; git client
 (leaf magit
   :ensure t
   :bind (("C-c g" . magit-status)))
