@@ -20,27 +20,6 @@
         },
         "version": "2c268a407e9e843abd03c6fa77485541a4ddcd9a"
     },
-    "pantran": {
-        "cargoLock": null,
-        "date": "2025-04-07",
-        "extract": null,
-        "name": "pantran",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "potamides",
-            "repo": "pantran.nvim",
-            "rev": "b87c3ae48cba4659587fb75abd847e5b7a7c9ca0",
-            "sha256": "sha256-b4odpXwh+BmFsK5v3HmSWG43FA+ygOAPU+qFNy6vWDU=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b87c3ae48cba4659587fb75abd847e5b7a7c9ca0"
-    },
     "skkeleton": {
         "cargoLock": null,
         "date": "2026-05-05",

@@ -18,18 +18,6 @@
     };
     date = "2023-11-26";
   };
-  pantran = {
-    pname = "pantran";
-    version = "b87c3ae48cba4659587fb75abd847e5b7a7c9ca0";
-    src = fetchFromGitHub {
-      owner = "potamides";
-      repo = "pantran.nvim";
-      rev = "b87c3ae48cba4659587fb75abd847e5b7a7c9ca0";
-      fetchSubmodules = false;
-      sha256 = "sha256-b4odpXwh+BmFsK5v3HmSWG43FA+ygOAPU+qFNy6vWDU=";
-    };
-    date = "2025-04-07";
-  };
   skkeleton = {
     pname = "skkeleton";
     version = "770b265dd115dba96ea5314642e35764654ef08f";

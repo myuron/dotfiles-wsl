@@ -1,20 +1,8 @@
 { pkgs, ... }:
-let
-  generated = import ../../../_sources/generated.nix;
-  sources = generated {
-    inherit (pkgs)
-      fetchurl
-      fetchFromGitHub
-      dockerTools
-      fetchgit
-      ;
-  };
-in
 {
-  extraPlugins = [(pkgs.vimUtils.buildVimPlugin {
-    name = "pantran";
-    src = sources.pantran.src;
-  })];
+  extraPlugins = [
+    pkgs.vimPlugins.pantran-nvim
+  ];
   extraConfigLua = ''
     require("pantran").setup({
       default_engine = "google",
