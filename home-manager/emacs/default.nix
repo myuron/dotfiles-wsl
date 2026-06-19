@@ -9,6 +9,7 @@
       org-roam
       org-pomodoro
       vertico
+      orderless
     ];
     extraConfig = builtins.readFile ./init.el;
   };

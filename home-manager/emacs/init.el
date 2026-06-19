@@ -32,6 +32,12 @@
 (leaf vertico
   :global-minor-mode t)
 
+;; fuzzy find
+(leaf orderless
+  :custom ((completion-styles . '(orderless))
+	   (completion-category-defaults . nil)
+	   (completion-category-overrides . '((file (styles partial-completion))))))
+
 ;; org-mode
 (leaf org
   :custom
