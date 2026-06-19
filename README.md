@@ -1,16 +1,16 @@
+# myuron's dotfiles
+
 ## Setup
+
+### Distributions other than NixOS
 
 1. Nix Setup
 
 ```bash
 curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install
-```
 
-```bash
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-```
 
-```bash
 nix run home-manager/master -- switch --flake .
 ```
 
@@ -18,13 +18,9 @@ nix run home-manager/master -- switch --flake .
 
 ```bash
 git config --global user.name "username"
-```
 
-```bash
 git config --global user.email "user@example.com"
-```
 
-```bash
 git config --global ghq.root '~/src'
 ```
 
@@ -38,16 +34,27 @@ nix run nixpkgs#ghq get myuron/dotfiles-wsl
 
 ```bash
 cd ~/src/github.com/myuron/dotfiles-wsl
-```
-
-```bash
-home-manager switch --flake .
+nix run .#home
 ```
 
 5. Shell Setup
+
 ```bash
 echo $(which fish) | sudo tee -a /etc/shells
-```
-```bash
+
 chsh -s $(which fish)
+```
+
+## Emacs(org-mode) Setup
+
+1. setup org-agenda
+
+```bash
+mkdir ~/org
+```
+
+2. setup org-roam
+
+```bash
+ghq get myuron/org-roam
 ```
