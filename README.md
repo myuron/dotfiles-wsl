@@ -1,8 +1,38 @@
 # myuron's dotfiles
 
+https://github.com/myuron/dotfiles-wsl/actions/workflows/home-manager.yml/badge.svg
+
 ## Setup
 
-### Distributions other than NixOS
+### NixOS (WSL2)
+
+2. Git Setup
+
+```bash
+git config --global user.name "username"
+
+git config --global user.email "user@example.com"
+
+git config --global ghq.root '~/src'
+```
+
+3. Clone Repository
+
+```bash
+nix run nixpkgs#ghq get myuron/dotfiles-wsl
+```
+
+4. Build Environment
+
+```bash
+cd ~/src/github.com/myuron/dotfiles-wsl
+
+nix run .#nixos
+
+nix run .#home
+```
+
+### Distributions other than NixOS (WSL2)
 
 1. Nix Setup
 
@@ -10,8 +40,6 @@
 curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install
 
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-
-nix run home-manager/master -- switch --flake .
 ```
 
 2. Git Setup
