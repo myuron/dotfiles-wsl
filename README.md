@@ -1,6 +1,6 @@
 # myuron's dotfiles
 
-https://github.com/myuron/dotfiles-wsl/actions/workflows/home-manager.yml/badge.svg
+![CI]https://github.com/myuron/dotfiles-wsl/actions/workflows/home-manager.yml/badge.svg
 
 ## Setup
 
