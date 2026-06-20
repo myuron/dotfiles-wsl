@@ -20,7 +20,7 @@
 (leaf leaf-convert)
 
 ;; color scheme
-(leaf doom-thems
+(leaf doom-themes
   :config
   (load-theme 'doom-dracula t))
 
@@ -59,3 +59,13 @@
   (org-agenda-files . `(,org-directory))
   (org-agenda-window-setup . current-window)
   :bind (("C-c a" . org-agenda)))
+
+(leaf org-capture
+  :custom
+  (org-capture-templates . '(("t" "Todo" entry (file+headline "~/org/0_todo.org" "Unorganized")
+			      "** TODO %?\n")))
+  :bind (("C-c c" . org-capture)))
+
+;; タイム管理
+(leaf org-pomodoro
+  :bind (("C-c p" . org-pomodoro)))
