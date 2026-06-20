@@ -38,6 +38,13 @@
 	   (completion-category-defaults . nil)
 	   (completion-category-overrides . '((file (styles partial-completion))))))
 
+;; skk
+(leaf nskk
+  :custom
+  (nskk-dict-system-dictionary-files . "~/.nix-profile/share/skk/SKK-JISYO.L")
+  :config
+  (nskk-global-mode 1))
+
 ;; org-mode
 (leaf org
   :custom

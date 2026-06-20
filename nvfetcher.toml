@@ -5,3 +5,7 @@ fetch.github = "vim-skk/skkeleton"
 [cmp-skkeleton]
 src.git = "https://github.com/uga-rosa/cmp-skkeleton"
 fetch.github = "uga-rosa/cmp-skkeleton"
+
+[nskk]
+src.git = "https://github.com/takeokunn/nskk.el"
+fetch.github = "takeokunn/nskk.el"

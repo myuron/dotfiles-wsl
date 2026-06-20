@@ -18,6 +18,18 @@
     };
     date = "2023-11-26";
   };
+  nskk = {
+    pname = "nskk";
+    version = "e429c83b4c75042444c6d30d3fee79be6877febe";
+    src = fetchFromGitHub {
+      owner = "takeokunn";
+      repo = "nskk.el";
+      rev = "e429c83b4c75042444c6d30d3fee79be6877febe";
+      fetchSubmodules = false;
+      sha256 = "sha256-sc64yUTmAjT6t4pSzYv5bDTPDi8nyzrzr83Qtgk1jl4=";
+    };
+    date = "2026-05-16";
+  };
   skkeleton = {
     pname = "skkeleton";
     version = "770b265dd115dba96ea5314642e35764654ef08f";
