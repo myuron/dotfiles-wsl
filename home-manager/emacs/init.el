@@ -45,6 +45,10 @@
   :config
   (nskk-global-mode 1))
 
+;; which-key
+(leaf which-key
+  :global-minor-mode t)
+
 ;; org-mode
 (leaf org
   :custom

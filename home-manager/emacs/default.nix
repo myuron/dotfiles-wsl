@@ -14,6 +14,7 @@ in
       org-pomodoro
       vertico
       orderless
+      which-key
       (epkgs.melpaBuild {
         pname = "nskk";
         version = "0.2.1";
