@@ -34,6 +34,8 @@
       zenn-cli
       nerd-fonts.jetbrains-mono
       nixd
+      awscli2
+      ssm-session-manager-plugin
     ];
   };
 
