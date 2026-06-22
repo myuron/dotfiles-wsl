@@ -57,6 +57,7 @@
   (org-refile-targets . '((org-agenda-files :maxlevel . 1)))
   (org-columns-default-format . "%68ITEM(Task) %6Effort(Effort){:} %6CLOCKSUM(Clock){:}")
   (org-startup-indented . t)
+  (org-log-done . time)
   :bind (("C-c t i" . org-clock-in)
          ("C-c t o" . org-clock-out)
 	 ("C-c t s" . org-set-effort)))
