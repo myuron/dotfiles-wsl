@@ -11,10 +11,12 @@ let
   };
 in
 {
-  extraPlugins = [(pkgs.vimUtils.buildVimPlugin {
-    name = "skkeleton";
-    src = sources.skkeleton.src;
-  })];
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
+      name = "skkeleton";
+      src = sources.skkeleton.src;
+    })
+  ];
   autoCmd = [
     {
       event = "User";

@@ -6,12 +6,22 @@
       "BufNewFile"
     ];
     servers = {
-      nixd = { enable = true; };
-      gopls = { enable = true; };
-      jdtls = { enable = true; };
+      nixd = {
+        enable = true;
+      };
+      gopls = {
+        enable = true;
+      };
+      jdtls = {
+        enable = true;
+      };
       # yaml-language-server = { enable = true; };
-      yamlls = { enable = true; };
-      terraform_lsp = { enable = true; };
+      yamlls = {
+        enable = true;
+      };
+      terraform_lsp = {
+        enable = true;
+      };
     };
   };
   keymaps = [

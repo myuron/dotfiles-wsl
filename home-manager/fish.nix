@@ -26,9 +26,9 @@
       '';
     };
     shellAbbrs = {
-      ls = "eza --icons always --classify"; 
-      ll = "eza --icons always --classify -lh"; 
-      la = "eza --icons always --classify -lha"; 
+      ls = "eza --icons always --classify";
+      ll = "eza --icons always --classify -lh";
+      la = "eza --icons always --classify -lha";
       cat = "bat";
       grep = "rg";
       cl = "claude";

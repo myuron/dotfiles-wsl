@@ -5,7 +5,7 @@
       tldr = {
         metadata = {
           name = "tldr";
-          requirements = ["tldr"];
+          requirements = [ "tldr" ];
         };
         source = {
           command = "tldr --list";
@@ -17,7 +17,7 @@
       nix = {
         metadata = {
           name = "nix";
-          requirements = ["nix-search-tv"];
+          requirements = [ "nix-search-tv" ];
         };
         source = {
           command = "nix-search-tv print";

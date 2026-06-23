@@ -1,4 +1,3 @@
-
 { pkgs, ... }:
 let
   generated = import ../../../_sources/generated.nix;
@@ -12,9 +11,11 @@ let
   };
 in
 {
-  extraPlugins = [(pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-skkeleton";
-    src = sources.cmp-skkeleton.src;
-    nvimSkipModule = [ "cmp_skkeleton" ];
-  })];
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
+      name = "cmp-skkeleton";
+      src = sources.cmp-skkeleton.src;
+      nvimSkipModule = [ "cmp_skkeleton" ];
+    })
+  ];
 }
