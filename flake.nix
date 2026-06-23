@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     llm-agents.url = "github:numtide/llm-agents.nix";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -20,13 +24,22 @@
       nixos-wsl,
       nixvim,
       llm-agents,
-      ... 
-    }: 
+      treefmt-nix,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      formatter.${system} = treefmt-nix.lib.mkWrapper pkgs {
+        projectRootFile = "flake.nix";
+        programs = {
+          nixfmt.enable = true; # nix
+          taplo.enable = true; # toml
+        };
+      };
+
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         system = system;
         modules = [
@@ -51,20 +64,24 @@
       apps.${system} = {
         nixos = {
           type = "app";
-          program = toString (pkgs.writeShellScript "home-manager build..." ''
-            set -e
-            echo "==> build nixos"
-            sudo nixos-rebuild switch --flake .#nixos
-          '');
+          program = toString (
+            pkgs.writeShellScript "home-manager build..." ''
+              set -e
+              echo "==> build nixos"
+              sudo nixos-rebuild switch --flake .#nixos
+            ''
+          );
         };
 
         home = {
           type = "app";
-          program = toString (pkgs.writeShellScript "home-manager build..." ''
-            set -e
-            echo "==> build home-manager"
-            nix run nixpkgs#home-manager -- switch --flake .#home
-          '');
+          program = toString (
+            pkgs.writeShellScript "home-manager build..." ''
+              set -e
+              echo "==> build home-manager"
+              nix run nixpkgs#home-manager -- switch --flake .#home
+            ''
+          );
         };
       };
     };
