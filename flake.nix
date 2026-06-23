@@ -65,7 +65,7 @@
         nixos = {
           type = "app";
           program = toString (
-            pkgs.writeShellScript "home-manager build..." ''
+            pkgs.writeShellScript "nixos build..." ''
               set -e
               echo "==> build nixos"
               sudo nixos-rebuild switch --flake .#nixos
