@@ -14,5 +14,8 @@
     scrolloff = 3;
     autoindent = true;
     winborder = "rounded";
+    termguicolors = true;
+    winblend = 0;
+    pumblend = 0;
   };
 }

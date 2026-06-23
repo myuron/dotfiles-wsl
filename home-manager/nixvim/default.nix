@@ -5,7 +5,14 @@
       vimAlias = true;
       # colorschemes.catppuccin.enable = true;
       # colorschemes.tokyonight.enable = true;
-      colorschemes.everforest.enable = true;
+      colorschemes.everforest = {
+        enable = true;
+        settings = {
+          background = "hard";
+          float_style = "bright";
+          transparent_background = 2;
+        };
+      };
       imports = [
         ./option.nix
         ./keymap.nix

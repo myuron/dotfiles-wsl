@@ -17,7 +17,8 @@
         indicator = {
           style = "underline";
         };
-        separator_style = "slant";
+        separator_style = "thick";
+        show_buffer_close_icons = false;
       };
     };
   };
