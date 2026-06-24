@@ -7,6 +7,14 @@
         name = "fzf-fish";
         src = pkgs.fishPlugins.fzf-fish.src;
       }
+      {
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair.src;
+      }
+      {
+        name = "fifc";
+        src = pkgs.fishPlugins.fifc.src;
+      }
     ];
     functions = {
       ghq-fzf = ''

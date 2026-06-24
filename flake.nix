@@ -1,16 +1,16 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    llm-agents.url = "github:numtide/llm-agents.nix";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,10 +20,10 @@
   outputs =
     {
       nixpkgs,
-      home-manager,
       nixos-wsl,
-      nixvim,
       llm-agents,
+      home-manager,
+      nixvim,
       treefmt-nix,
       ...
     }:
