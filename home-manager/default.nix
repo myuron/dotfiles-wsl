@@ -18,6 +18,7 @@
       tldr
       nix-search-tv
       fd
+      yazi
       vim-startuptime
       viddy
       fzf
@@ -43,6 +44,7 @@
   imports = [
     ./nixvim
     ./emacs
+    ./zellij
     ./fish.nix
     ./direnv.nix
     ./television.nix

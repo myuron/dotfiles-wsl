@@ -1,0 +1,18 @@
+layout {
+  pane split_direction="vertical" {
+    pane split_direction="horizontal" {
+      pane size="80%" {
+        name "Editor"
+        command "vim"
+      }
+      pane size="20%" {
+        name "Prompt"
+      }
+
+    }
+    pane size="20%" {
+      name "AI Agent"
+      command "claude"
+    }
+  }
+}

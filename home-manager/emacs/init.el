@@ -62,6 +62,10 @@
          ("C-c t o" . org-clock-out)
 	 ("C-c t s" . org-set-effort)))
 
+(leaf org-todo
+  :custom
+  (org-todo-keywords . '((sequence "TODO(t)" "DOIN(i)" "WAIT(w)" "|" "DONE(d)" "SKIP(s)"))))
+
 ;; ナレッジ管理
 (leaf org-roam
   :custom

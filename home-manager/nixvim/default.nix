@@ -40,6 +40,10 @@
         ./plugin/denops.nix
         ./plugin/skkeleton.nix
         ./plugin/cmp-skkeleton.nix
+        ./plugin/dap.nix
+        ./plugin/dap-ui.nix
+        ./plugin/dap-virtual-text.nix
+        ./plugin/dap-go.nix
       ];
     };
   };
