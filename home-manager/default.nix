@@ -37,7 +37,7 @@
       nixd
       awscli2
       ssm-session-manager-plugin
-      nixfmt-rfc-style
+      # nixfmt-rfc-style
     ];
   };
 
