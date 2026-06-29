@@ -64,7 +64,8 @@
 
 (leaf org-todo
   :custom
-  (org-todo-keywords . '((sequence "TODO(t)" "DOIN(i)" "WAIT(w)" "|" "DONE(d)" "SKIP(s)"))))
+  (org-todo-keywords . '((sequence "TODO(t)" "DOIN(i)" "WAIT(w)" "|" "DONE(d)" "SKIP(s)")))
+  (org-todo-keyword-faces . '(("WAIT" . (:foreground "CadetBlue3" :weight bold)))))
 
 ;; ナレッジ管理
 (leaf org-roam
