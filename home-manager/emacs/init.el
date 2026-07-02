@@ -91,7 +91,7 @@
 (leaf org-capture
   :custom
   (org-capture-templates . '(("t" "Todo Entroy" entry (file+headline "~/org/0_inbox.org" "Inbox")
-			      "** TODO %?\n")
+			      "** TODO %?\t:undefined:\n")
                              ("m" "Meeting Entry" entry (file+headline "~/org/3_meeting.org" "Meeting")
             "** TODO %?\n")))
   :bind (("C-c c" . org-capture)))
