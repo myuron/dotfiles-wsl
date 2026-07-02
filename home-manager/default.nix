@@ -3,7 +3,7 @@
   home = {
     username = "myuron";
     homeDirectory = "/home/myuron";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
     packages = with pkgs; [
       wget
       lazygit
@@ -12,18 +12,19 @@
       gh
       ghq
       jq
-      ripgrep
+      eza # enhanced version of ls
+      bat # enhanced version of cat
+      ripgrep # enhanced version of grep
+      fd # enhanced version of find
+      viddy # enhanced version of watch
+      duf # enhanced version of df
       delve
       gopls
       tldr
       nix-search-tv
-      fd
       yazi
       vim-startuptime
-      viddy
       fzf
-      eza
-      bat
       zoxide
       llm-agents.claude-code
       kubectl
@@ -37,7 +38,7 @@
       nixd
       awscli2
       ssm-session-manager-plugin
-      # nixfmt-rfc-style
+      tirith
     ];
   };
 

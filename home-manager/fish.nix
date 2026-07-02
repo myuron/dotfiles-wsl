@@ -37,6 +37,7 @@
       ls = "eza --icons always --classify";
       ll = "eza --icons always --classify -lh";
       la = "eza --icons always --classify -lha";
+      lt = "eza --icons always --classify -lh --tree";
       cat = "bat";
       grep = "rg";
       cl = "claude";
