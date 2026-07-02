@@ -91,9 +91,10 @@
 (leaf org-capture
   :custom
   (org-capture-templates . '(("t" "Todo Entroy" entry (file+headline "~/org/0_inbox.org" "Inbox")
-			      "** TODO %?\t:undefined:\n")
+			      "** TODO %? :undefined:\n")
                              ("m" "Meeting Entry" entry (file+headline "~/org/3_meeting.org" "Meeting")
             "** TODO %?\n")))
+  :hook (org-capture-before-finalize-hook . (lambda () (org-align-tags t)))
   :bind (("C-c c" . org-capture)))
 
 ;; タイム管理
