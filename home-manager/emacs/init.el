@@ -13,6 +13,10 @@
 ;; shut up, emacs!
 (setq display-warning-minimum-level :error)
 
+;; メニューバーとツールバーを非表示
+(menu-bar-mode -1)
+(tool-bar-mode 0)
+
 ;; remap set mark command
 (leaf emacs
   :bind (("C-M-SPC" . set-mark-command)))
