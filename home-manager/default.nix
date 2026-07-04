@@ -25,7 +25,6 @@
       yazi
       vim-startuptime
       fzf
-      zoxide
       llm-agents.claude-code
       kubectl
       minikube
@@ -49,6 +48,7 @@
     ./fish.nix
     ./direnv.nix
     ./television.nix
+    ./zoxide.nix
   ];
 
   programs.home-manager.enable = true;
