@@ -4,8 +4,6 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixvim.url = "github:nix-community/nixvim";
     llm-agents.url = "github:numtide/llm-agents.nix";
-    emacs-config.url = "github:myuron/.emacs.d";
-    twist.url = "github:emacs-twist/twist.nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,8 +20,6 @@
       nixos-wsl,
       nixvim,
       llm-agents,
-      emacs-config,
-      twist,
       home-manager,
       treefmt-nix,
       ...
@@ -59,9 +55,7 @@
         modules = [
           ./home-manager
           nixvim.homeModules.nixvim
-          twist.homeModules.emacs-twist
         ];
-        extraSpecialArgs = { inherit emacs-config; };
       };
 
       apps.${system} = {

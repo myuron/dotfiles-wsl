@@ -1,10 +1,9 @@
-{ pkgs, emacs-config, ... }:
 {
-  programs.emacs-twist = {
+  programs.emacs = {
     enable = true;
-    directory = ".emacs.d";
-    createInitFile = true;
-    emacsclient.enable = true;
-    config = emacs-config.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    extraPackages = epkgs: with epkgs; [
+      doom-themes
+    ];
+    extraConfig = builtins.readFile ./init.el;
   };
 }
