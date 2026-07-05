@@ -34,7 +34,7 @@
       "nix-command"
       "flakes"
     ];
-    allow-import-from-derivation = false;
+    allow-import-from-derivation = true;
     sandbox = true;
   };
 }

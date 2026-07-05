@@ -1,29 +1,10 @@
-{ pkgs, ... }:
-let
-  sources = pkgs.callPackage ../../_sources/generated.nix { };
-in
+{ pkgs, emacs-config, ... }:
 {
-  programs.emacs = {
+  programs.emacs-twist = {
     enable = true;
-    extraPackages =
-      epkgs: with epkgs; [
-        leaf
-        leaf-convert
-        doom-themes
-        doom-modeline
-        org-roam
-        org-pomodoro
-        vertico
-        orderless
-        which-key
-        (epkgs.melpaBuild {
-          pname = "nskk";
-          version = "0.2.1";
-          src = sources.nskk.src;
-          files = ''("src/*.el")'';
-          ignoreCompilationError = false;
-        })
-      ];
-    extraConfig = builtins.readFile ./init.el;
+    directory = ".emacs.d";
+    createInitFile = true;
+    emacsclient.enable = true;
+    config = emacs-config.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 }

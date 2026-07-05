@@ -41,7 +41,6 @@
       cat = "bat";
       grep = "rg";
       cl = "claude";
-      emacs = "emacs --no-window-system";
     };
     shellInit = ''
       bind \cg ghq-fzf
