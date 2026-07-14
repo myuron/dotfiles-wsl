@@ -21,6 +21,11 @@ in
       evil
       magit
       eat
+      eglot
+      nix-ts-mode
+      go-mode
+      rust-mode
+      treesit-grammars.with-all-grammars
       (epkgs.melpaBuild {
         pname = "nskk";
         version = "0.2.1";
