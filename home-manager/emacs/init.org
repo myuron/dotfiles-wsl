@@ -81,6 +81,16 @@ verticoは、補完候補を垂直表示する。
     (after-init . vertico-mode))
 #+end_src
 
+*** [[https://github.com/tumashu/vertico-posframe][vertico-posframe]]
+
+vertico-posframeは、補完候補を中央に表示する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package vertico-posframe
+    :hook
+    (after-init . vertico-posframe-mode))
+#+end_src
+
 *** [[https://github.com/minad/marginalia][marginalia]]
 
 marginaliaは、補完候補に付随情報を追加する。
@@ -210,6 +220,14 @@ nskkは、SKK(Simple Kana to Kanji)方式の日本語入力を実現する。
 #+begin_src emacs-lisp :tangle yes
   (setq custom-file (locate-user-emacs-file "custom.el"))
   (load custom-file :no-error-if-file-is-missing)
+#+end_src
+
+*** バックアップファイル、ロックファイルを作成しない
+
+#+begin_src emacs-lisp :tangle yes
+  (setq make-backup-files nil)
+  (setq backup-inhibited nil)
+  (setq create-lockfiles nil)
 #+end_src
 
 *** [[https://github.com/magit/magit][magit]]

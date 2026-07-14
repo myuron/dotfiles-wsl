@@ -13,6 +13,7 @@ in
       nerd-icons-corfu
       nerd-icons-dired
       vertico
+      vertico-posframe
       marginalia
       orderless
       corfu
