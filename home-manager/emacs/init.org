@@ -24,7 +24,7 @@ init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する
   (scroll-bar-mode -1)
 #+end_src
 
-*** modus-themes
+*** [[https://github.com/protesilaos/modus-themes][modus-themes]]
 
 #+begin_src emacs-lisp :tangle yes
   (use-package modus-themes
@@ -32,13 +32,13 @@ init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する
     (load-theme 'modus-vivendi-tinted :no-confirm-loading))
 #+end_src
 
-*** nerd-icons
+*** [[https://github.com/rainstormstudio/nerd-icons.el][nerd-icons]]
 
 #+begin_src emacs-lisp :tangle yes
   (use-package nerd-icons)
 #+end_src
 
-*** nerd-icons-completion
+*** [[https://github.com/rainstormstudio/nerd-icons-completion][nerd-icons-completion]]
 
 marginaliaでnerd-iconsを有効化
 
@@ -49,7 +49,7 @@ marginaliaでnerd-iconsを有効化
     (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 #+end_src
 
-*** nerd-icons-corfu
+*** [[https://github.com/LuigiPiucco/nerd-icons-corfu][nerd-icons-corfu]]
 
 corfuでnerd-iconsを有効化
 
@@ -60,7 +60,7 @@ corfuでnerd-iconsを有効化
     (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 #+end_src
 
-*** nerd-icons-dired
+*** [[https://github.com/rainstormstudio/nerd-icons-dired][nerd-icons-dired]]
 
 diredでnerd-iconsを有効化
 
@@ -71,7 +71,7 @@ diredでnerd-iconsを有効化
 #+end_src
 
 
-*** vertico:
+*** [[https://github.com/minad/vertico][vertico]]
 
 verticoは、補完候補を垂直表示する。
 
@@ -81,7 +81,7 @@ verticoは、補完候補を垂直表示する。
     (after-init . vertico-mode))
 #+end_src
 
-*** marginalia:
+*** [[https://github.com/minad/marginalia][marginalia]]
 
 marginaliaは、補完候補に付随情報を追加する。
 
@@ -210,6 +210,16 @@ nskkは、SKK(Simple Kana to Kanji)方式の日本語入力を実現する。
 #+begin_src emacs-lisp :tangle yes
   (setq custom-file (locate-user-emacs-file "custom.el"))
   (load custom-file :no-error-if-file-is-missing)
+#+end_src
+
+*** [[https://github.com/magit/magit][magit]]
+
+magitは、Git Client機能を提供する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package magit
+    :bind
+    ("C-c g" . magit-status))
 #+end_src
 
 ** Tips

@@ -18,6 +18,7 @@ in
       corfu
       dired-subtree
       evil
+      magit
       (epkgs.melpaBuild {
         pname = "nskk";
         version = "0.2.1";
