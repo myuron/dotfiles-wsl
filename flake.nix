@@ -4,6 +4,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixvim.url = "github:nix-community/nixvim";
     llm-agents.url = "github:numtide/llm-agents.nix";
+    org-babel.url = "github:emacs-twist/org-babel";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +21,7 @@
       nixos-wsl,
       nixvim,
       llm-agents,
+      org-babel,
       home-manager,
       treefmt-nix,
       ...
@@ -49,8 +51,11 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = [
-            llm-agents.overlays.default
+            llm-agents.overlays.shared-nixpkgs
           ];
+        };
+        extraSpecialArgs = {
+          inherit org-babel;
         };
         modules = [
           ./home-manager

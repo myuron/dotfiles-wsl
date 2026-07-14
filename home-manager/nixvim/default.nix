@@ -3,16 +3,28 @@
     nixvim = {
       enable = true;
       vimAlias = true;
+      # colorschemes.solarized-osaka = {
+      #   enable = true;
+      # };
+      colorschemes.ayu = {
+        enable = true;
+      };
+      # colorschemes.kanagawa = {
+      #   enable = true;
+      #   settings = {
+      #     theme = "dragon";
+      #   };
+      # };
       # colorschemes.catppuccin.enable = true;
       # colorschemes.tokyonight.enable = true;
-      colorschemes.everforest = {
-        enable = true;
-        settings = {
-          background = "hard";
-          float_style = "bright";
-          transparent_background = 2;
-        };
-      };
+      # colorschemes.everforest = {
+      #   enable = true;
+      #   settings = {
+      #     background = "hard";
+      #     float_style = "bright";
+      #     transparent_background = 2;
+      #   };
+      # };
       imports = [
         ./option.nix
         ./keymap.nix

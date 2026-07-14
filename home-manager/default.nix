@@ -20,24 +20,33 @@
       duf # enhanced version of df
       delve
       gopls
+      godef
       tldr
       nix-search-tv
       yazi
       vim-startuptime
       fzf
       llm-agents.claude-code
+      claude-agent-acp
       kubectl
-      minikube
+      (lowPrio minikube)
       nix-output-monitor
       tree-sitter
       nvfetcher
       skkDictionaries.l
       zenn-cli
       nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
+      hackgen-font
+      hackgen-nf-font
       nixd
       awscli2
       ssm-session-manager-plugin
       tirith
+      bun
+      rustc
+      cargo
+      rust-analyzer
     ];
   };
 
@@ -49,6 +58,7 @@
     ./direnv.nix
     ./television.nix
     ./zoxide.nix
+    ./claude-code.nix
   ];
 
   programs.home-manager.enable = true;

@@ -22,6 +22,11 @@
       terraform_lsp = {
         enable = true;
       };
+      rust_analyzer = {
+        enable = true;
+        installCargo = true;
+        installRustc = true;
+      };
     };
   };
   keymaps = [

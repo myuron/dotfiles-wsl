@@ -1,0 +1,212 @@
+* myuron's emacs configuration
+
+init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する。
+
+パッケージのインストールはnixで行い、設定のみinit.orgに定義する。(inti.orgでensure tは不要)
+
+** UI
+
+*** フォント
+
+#+begin_src emacs-lisp :tangle yes
+  (let ((mono-spaced-font "HackGen Console NF")
+        (proportionately-spaced-font "Sans"))
+    (set-face-attribute 'default nil :family mono-spaced-font :height 120)
+    (set-face-attribute 'fixed-pitch nil :family mono-spaced-font :height 1.0)
+    (set-face-attribute 'variable-pitch nil :family proportionately-spaced-font :height 1.0))    
+#+end_src
+
+*** メニューバー、ツールバー、スクロールバーを非表示にする
+
+#+begin_src emacs-lisp :tangle yes
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+#+end_src
+
+*** modus-themes: カラースキーマ
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package modus-themes
+    :config
+    (load-theme 'modus-vivendi-tinted :no-confirm-loading))
+#+end_src
+
+*** nerd-icons: アイコン
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package nerd-icons)
+#+end_src
+
+*** nerd-icons-completion: アイコン
+
+marginaliaでnerd-iconsを有効化
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package nerd-icons-completion
+    :after marginalia
+    :config
+    (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
+#+end_src
+
+*** nerd-icons-corfu: アイコン
+
+corfuでnerd-iconsを有効化
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package nerd-icons-corfu
+    :after corfu
+    :config
+    (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+#+end_src
+
+*** nerd-icons-dired: アイコン
+
+diredでnerd-iconsを有効化
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package nerd-icons-dired
+    :hook
+    (dired-mode . nerd-icons-dired-mode))
+#+end_src
+
+
+*** vertico: 補完候補を垂直表示
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package vertico
+    :hook
+    (after-init . vertico-mode))
+#+end_src
+
+*** marginalia: 補完候補に付随情報を追加
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package marginalia
+    :hook
+    (after-init . marginalia-mode))
+#+end_src
+
+*** [[https://github.com/oantolin/orderless][orderless]]
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package orderless
+    :config
+    (setq completion-styles '(orderless basic))
+    (setq completion-category-defaults nil)
+    (setq completion-category-overrides nil))
+#+end_src
+
+*** dired
+
+[標準]diredは、ディレクトリの内容をバッファ上に一覧表示し、ファイルのコピー、移動、削除、リネームなどをキー操作で行なうファイルマネージャー。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package dired
+    :commands (dired)
+    :hook
+    ((dired-mode . dired-hide-details-mode)
+     (dired-mode . hl-line-mode))
+    :config
+    (setq dired-recursive-copies 'always)
+    (setq dired-recursive-deletes 'alwasy)
+    (setq delete-by-moving-to-trash t)
+    (setq dired-dwim-target t))
+#+end_src
+
+*** [[https://github.com/fuco1/dired-hacks#dired-subtree][dired-subtree]]
+
+dired-subtreeは、dired上でサブディレクトリを別バッファに移動せずにその場でツリー状に展開、折りたたみを実現する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package dired-subtree
+    :after dired
+    :bind
+    (:map dired-mode-map
+  	("<tab>" . dired-subtree-toggle)
+  	("TAB" . dired-subtree-toggle)
+  	("<backtab>" . dired-subtree-remove)
+  	("S-TAB" . dired-subtree-remove))
+    :config
+    (setq dired-subtree-use-backgrounds nil))
+#+end_src
+
+*** savehist
+
+[標準]savehistは、ミニバッファの入力履歴をファイルに保存し、セッション間で共有する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package savehist
+    :hook
+    (after-ini . savehist-mode))
+#+end_src
+
+*** [[https://github.com/minad/corfu][corfu]]
+
+corfuは、カーソル位置に補完候補をポップアップ表示する軽量な入力補完UI。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package corfu
+    :hook
+    (after-init . global-corfu-mode)
+    :bind
+    (:map corfu-map ("<tab>" . corfu-complete))
+    :config
+    (setq tab-always-indent 'complete)
+    (setq corfu-preview-current nil)
+    (setq corfu-min-width 20)
+    (setq corfu-popupinfo-delay '(1.25 . 0.5))
+    (corfu-popupinfo-mode 1)
+    (with-eval-after-load 'savehist
+      (corfu-history-mode 1)
+      (add-to-list 'savehist-additional-variables 'corfu-history)))
+#+end_src
+
+** Edit
+
+*** delsel
+
+[標準]テキスト挿入時に選択したテキストを削除する
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package delsel
+    :hook
+    (after-init . delete-selection-mode))
+#+end_src
+
+*** [[https://github.com/emacs-evil/evil][evil]]
+
+evilは、Vimのモーダル編集を再現する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package evil
+    :init
+    (evil-mode 1))
+#+end_src
+
+*** [[https://github.com/takeokunn/nskk.el][nskk]]
+
+nskkは、SKK(Simple Kana to Kanji)方式の日本語入力を実現する。
+
+#+begin_src emacs-lisp :tanble yes
+  (use-package nskk
+    :custom
+    (nskk-dics-system-dictionary-files
+     '("~/.nix-profile/share/skk/SKK-JISYO.L"))
+    :config
+    (nskk-global-mode 1))
+#+end_src
+
+** Other
+
+*** Custom fileの保存先
+
+#+begin_src emacs-lisp :tangle yes
+  (setq custom-file (locate-user-emacs-file "custom.el"))
+  (load custom-file :no-error-if-file-is-missing)
+#+end_src
+
+** Tips
+
+- C-c C-e: (org-export-dispatch)orgファイルを様々なファイル形式でエクスポート
+- C-c C-,: orgファイルでスニペットを挿入する

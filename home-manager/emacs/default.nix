@@ -1,9 +1,32 @@
+{ pkgs, org-babel, ... }:
+let
+  sources = pkgs.callPackage ../../_sources/generated.nix { };
+  tangle = org-babel.lib.tangleOrgBabel { languages = [ "emacs-lisp" ]; };
+in
 {
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: with epkgs; [
-      doom-themes
+      modus-themes
+      nerd-icons
+      nerd-icons-completion
+      nerd-icons-corfu
+      nerd-icons-dired
+      vertico
+      marginalia
+      orderless
+      corfu
+      dired-subtree
+      evil
+      (epkgs.melpaBuild {
+        pname = "nskk";
+        version = "0.2.1";
+        src = sources.nskk.src;
+        files = ''("src/*.el")'';
+        ignoreCompilationError = false;
+      })
     ];
-    extraConfig = builtins.readFile ./init.el;
   };
+
+  home.file.".emacs.d/init.el".text = tangle (builtins.readFile ./init.org);
 }

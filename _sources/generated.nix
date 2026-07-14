@@ -20,15 +20,27 @@
   };
   nskk = {
     pname = "nskk";
-    version = "e429c83b4c75042444c6d30d3fee79be6877febe";
+    version = "8757fa3f38ad0cee20606d0fb5d369ecb845503d";
     src = fetchFromGitHub {
       owner = "takeokunn";
       repo = "nskk.el";
-      rev = "e429c83b4c75042444c6d30d3fee79be6877febe";
+      rev = "8757fa3f38ad0cee20606d0fb5d369ecb845503d";
       fetchSubmodules = false;
-      sha256 = "sha256-sc64yUTmAjT6t4pSzYv5bDTPDi8nyzrzr83Qtgk1jl4=";
+      sha256 = "sha256-LUNe0TQPeFJ1+TTPP3OByO+7WCnaK/sBT8BWvZ1Ycvk=";
     };
-    date = "2026-05-16";
+    date = "2026-07-04";
+  };
+  om-dash = {
+    pname = "om-dash";
+    version = "e89132365aef923c0493566f4ace5ece02c759ad";
+    src = fetchFromGitHub {
+      owner = "gavv";
+      repo = "om-dash";
+      rev = "e89132365aef923c0493566f4ace5ece02c759ad";
+      fetchSubmodules = false;
+      sha256 = "sha256-vkKm8F+/8B+Fo0hNyd+f8Zz79wfcJPcJMIuxNoo15gs=";
+    };
+    date = "2025-03-11";
   };
   skkeleton = {
     pname = "skkeleton";

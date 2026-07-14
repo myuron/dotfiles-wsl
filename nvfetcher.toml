@@ -9,3 +9,7 @@ fetch.github = "uga-rosa/cmp-skkeleton"
 [nskk]
 src.git = "https://github.com/takeokunn/nskk.el"
 fetch.github = "takeokunn/nskk.el"
+
+[om-dash]
+src.git = "https://github.com/gavv/om-dash"
+fetch.github = "gavv/om-dash"
