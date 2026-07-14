@@ -1,10 +1,29 @@
 * myuron's emacs configuration
 
-init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する。
+init.orgをorg-babelを用いてinit.elに変換し、~/.emacs.d/に配置する。
 
 パッケージのインストールはnixで行い、設定のみinit.orgに定義する。(inti.orgでensure tは不要)
 
+初期表示に関する設定は[[./early-init.org][early-init.org]]に定義する
+
 ** UI
+
+*** 行番号表示
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package display-line-numbers
+    :custom (display-line-numbers-width 4)
+    :init
+    (global-display-line-numbers-mode 1))
+#+end_src
+
+*** 現在行の強調表示
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package hl-line
+    :init
+    (global-hl-line-mode 1))
+#+end_src
 
 *** フォント
 
@@ -16,20 +35,23 @@ init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する
     (set-face-attribute 'variable-pitch nil :family proportionately-spaced-font :height 1.0))    
 #+end_src
 
-*** メニューバー、ツールバー、スクロールバーを非表示にする
-
-#+begin_src emacs-lisp :tangle yes
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
-#+end_src
-
 *** [[https://github.com/protesilaos/modus-themes][modus-themes]]
 
 #+begin_src emacs-lisp :tangle yes
   (use-package modus-themes
     :config
     (load-theme 'modus-vivendi-tinted :no-confirm-loading))
+#+end_src
+
+*** tab-bar-mode
+
+[標準]バッファをタブで管理する機能を提供する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package tab-bar
+    :init
+    (tab-bar-mode)
+    (tab-bar-history-mode))
 #+end_src
 
 *** [[https://github.com/rainstormstudio/nerd-icons.el][nerd-icons]]
@@ -69,7 +91,6 @@ diredでnerd-iconsを有効化
     :hook
     (dired-mode . nerd-icons-dired-mode))
 #+end_src
-
 
 *** [[https://github.com/minad/vertico][vertico]]
 
@@ -215,13 +236,6 @@ nskkは、SKK(Simple Kana to Kanji)方式の日本語入力を実現する。
 
 ** Other
 
-*** Custom fileの保存先
-
-#+begin_src emacs-lisp :tangle yes
-  (setq custom-file (locate-user-emacs-file "custom.el"))
-  (load custom-file :no-error-if-file-is-missing)
-#+end_src
-
 *** バックアップファイル、ロックファイルを作成しない
 
 #+begin_src emacs-lisp :tangle yes
@@ -238,6 +252,16 @@ magitは、Git Client機能を提供する。
   (use-package magit
     :bind
     ("C-c g" . magit-status))
+#+end_src
+
+*** eat
+
+eatは、Emacs上で動作するターミナルエミュレータ機能を提供する。
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package eat
+    :bind
+    ("C-c t" . eat))
 #+end_src
 
 ** Tips

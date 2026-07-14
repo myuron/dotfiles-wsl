@@ -20,6 +20,7 @@ in
       dired-subtree
       evil
       magit
+      eat
       (epkgs.melpaBuild {
         pname = "nskk";
         version = "0.2.1";
@@ -30,5 +31,6 @@ in
     ];
   };
 
+  home.file.".emacs.d/early-init.el".text = tangle (builtins.readFile ./early-init.org);
   home.file.".emacs.d/init.el".text = tangle (builtins.readFile ./init.org);
 }

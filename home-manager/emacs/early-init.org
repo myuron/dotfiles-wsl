@@ -1,0 +1,47 @@
+* myuron's emacs configuration
+
+** header
+
+#+begin_src emacs-lisp :tangle yes
+  ;;; package --- early initial configuration -*- lexical-binding: t; -*-
+  ;;; Commentary:
+  ;;; Code;
+#+end_src
+
+** custom 変数の保存先を変更
+
+#+begin_src emacs-lisp :tangle yes
+  (setq custom-file (locate-user-emacs-file "custom.el"))
+  (load custom-file :no-error-if-file-is-missing)
+#+end_src
+
+** 画面最大化
+
+#+begin_src emacs-lisp :tangle yes
+  (push '(fullscreen . maximized) default-frame-alist)
+#+end_src
+
+** メニューバー非表示
+
+#+begin_src emacs-lisp :tangle yes
+  (menu-bar-mode -1)
+#+end_src
+
+** ツールバー非表示
+
+#+begin_src emacs-lisp :tangle yes
+  (tool-bar-mode -1)
+#+end_src
+
+** スクロールバー非表示
+
+#+begin_src emacs-lisp :tangle yes
+  (scroll-bar-mode -1)
+#+end_src
+
+** footer
+
+#+begin_src emacs-lisp :tangle yes
+  (provide 'early-init)
+  ;;; early-init.el ends here
+#+end_src
