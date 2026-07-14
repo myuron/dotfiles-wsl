@@ -24,7 +24,7 @@ init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する
   (scroll-bar-mode -1)
 #+end_src
 
-*** modus-themes: カラースキーマ
+*** modus-themes
 
 #+begin_src emacs-lisp :tangle yes
   (use-package modus-themes
@@ -32,13 +32,13 @@ init.orgをtwist.nixを用いてinit.elに変換し、~/.emacs.d/に配置する
     (load-theme 'modus-vivendi-tinted :no-confirm-loading))
 #+end_src
 
-*** nerd-icons: アイコン
+*** nerd-icons
 
 #+begin_src emacs-lisp :tangle yes
   (use-package nerd-icons)
 #+end_src
 
-*** nerd-icons-completion: アイコン
+*** nerd-icons-completion
 
 marginaliaでnerd-iconsを有効化
 
@@ -49,7 +49,7 @@ marginaliaでnerd-iconsを有効化
     (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup))
 #+end_src
 
-*** nerd-icons-corfu: アイコン
+*** nerd-icons-corfu
 
 corfuでnerd-iconsを有効化
 
@@ -60,7 +60,7 @@ corfuでnerd-iconsを有効化
     (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 #+end_src
 
-*** nerd-icons-dired: アイコン
+*** nerd-icons-dired
 
 diredでnerd-iconsを有効化
 
@@ -71,7 +71,9 @@ diredでnerd-iconsを有効化
 #+end_src
 
 
-*** vertico: 補完候補を垂直表示
+*** vertico:
+
+verticoは、補完候補を垂直表示する。
 
 #+begin_src emacs-lisp :tangle yes
   (use-package vertico
@@ -79,7 +81,9 @@ diredでnerd-iconsを有効化
     (after-init . vertico-mode))
 #+end_src
 
-*** marginalia: 補完候補に付随情報を追加
+*** marginalia:
+
+marginaliaは、補完候補に付随情報を追加する。
 
 #+begin_src emacs-lisp :tangle yes
   (use-package marginalia
@@ -88,6 +92,8 @@ diredでnerd-iconsを有効化
 #+end_src
 
 *** [[https://github.com/oantolin/orderless][orderless]]
+
+orderlessは、候補を順序不同で絞りこむ。
 
 #+begin_src emacs-lisp :tangle yes
   (use-package orderless
