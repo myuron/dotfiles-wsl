@@ -16,7 +16,9 @@ in
       vertico-posframe
       marginalia
       orderless
+      consult
       corfu
+      cape
       dired-subtree
       evil
       magit
@@ -26,6 +28,8 @@ in
       go-mode
       rust-mode
       treesit-grammars.with-all-grammars
+      moody
+      elfeed
       (epkgs.melpaBuild {
         pname = "nskk";
         version = "0.2.1";

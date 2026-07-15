@@ -61,6 +61,7 @@
     ./claude-code.nix
   ];
 
+  fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
 }
